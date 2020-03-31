@@ -12,21 +12,106 @@
  action:
  method: post get 提交方式
         get方式提交:可以从url看到密码，不安全
-        post方式提交:比较安全，可以传输大文件
+        post方式提交:比较安全，可以传输大文件,还是可以捕获
  -->
 
-<form action="0.hello.html" method="post">
+<form action="0.hello.html" method="get">
 
-    <!--  文本输入框：input  type="text" -->
-    <p>账户：<input type="text" name="username"></p>
+    <!--  文本输入框：input  type="text"
+            value="初始值"
+            maxlength="8"   最大长度
+            size="30"   文本长度
+            readonly    只读
+            hidden  隐藏
+     -->
+    <p>账户：<input type="text" name="username" value="admin" readonly></p>
     <!--  密码输入框：input  type="password" -->
-    <p>密码：<input type="password" name="password"></p>
+    <p>密码：<input type="password" name="password" hidden></p>
 
-    <p>
-        <input type="submit">
-        <input type="reset">
+    <!--  单选框标签：input  type="radio"
+            value   初始值
+            name  表示组
+            -->
+    <p>性别：
+        <input type="radio" value="boy" name="sex" checked/>男
+        <input type="radio" value="girl" name="sex"/>女
+    </p>
+    <!--  多选框标签：input  type="checkbox" -->
+    <p>爱好：
+        <input type="checkbox" value="sleep" name="hobby">睡觉
+        <input type="checkbox" value="code" name="hobby" checked>敲代码
+        <input type="checkbox" value="sleep" name="hobby">睡觉
+        <input type="checkbox" value="sleep" name="hobby">睡觉
+        <input type="checkbox" value="sleep" name="hobby">睡觉
+    </p>
+    <!--  按钮
+        input type="button" 普通按钮
+        input type="image"  图片按钮
+        input type="submit" 提交按钮
+        input type="reset"  重置按钮
+      -->
+    <p>按钮：
+        <input type="button" name="btn1" value="点击变大">
+        <input type="image" src="../resources/image/input_ok.png">
+    </p>
+    <!--  下拉框  -->
+    <p>下拉框
+        <select name="列表名称">
+            <option value="china">中国</option>
+            <option value="usa">美国</option>
+            <option value="选项值" selected>瑞士</option>
+            <option value="选项值">俄罗斯</option>
+            <option value="选项值">印度</option>
+        </select>
+    </p>
+    <!--  文本域
+           textarea name="textarea"
+      -->
+    <p>反馈：
+        <textarea name="textarea" cols="30" rows="10">默认文本内容</textarea>
     </p>
 
+    <!--  文件域
+          input type="file"
+     -->
+    <p>上传文件：
+        <input type="file" name="files">
+        <input type="button" name="upload" value="上传">
+    </p>
+
+    <!--  邮件验证  -->
+    <p>邮件:
+        <input type="email" name="email">
+    </p>
+    <!--  url  -->
+    <p>URL:
+        <input type="url" name="url">
+    </p>
+    <!--  数字  -->
+    <p>商品数量:
+        <input type="number" name="num" max="100" min="5" step="1">
+    </p>
+    <!--  滑块  input type="range"   -->
+    <p>音量：
+        <input type="range" name="voice" min="0" max="100" step="2">
+    </p>
+    <!--  搜索  -->
+    <p>
+        <input type="search" name="search">
+    </p>
+    <!--  增强鼠标可用性
+            label for="mark"    mark添加的id
+      -->
+    <p>
+        <label for="mark">点我试试</label>
+        <input type="text" id="mark">
+    </p>
+
+    <!--  disabled  禁用  -->
+    <p>
+        <input type="submit" value="提交表单" disabled>
+        <input type="reset" value="清空表单">
+    </p>
 </form>
 
 
